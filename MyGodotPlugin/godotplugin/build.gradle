@@ -1,0 +1,49 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+def pluginName = "MyGodotPlugin"
+def pluginPackageName = "com.codeforgetemple.godotplugin"
+def pluginClassName = pluginName
+
+android {
+    namespace pluginPackageName
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+
+        consumerProguardFiles "consumer-rules.pro"
+
+        // This will be accessible in the AndroidManifest.xml
+        manifestPlaceholders["pluginName"] = pluginName
+        manifestPlaceholders["pluginPackageName"] = pluginPackageName
+        manifestPlaceholders["pluginClassName"] = pluginClassName
+
+        // This will be accessible in java code with BuildConfig.GODOT_PLUGIN_NAME
+        buildConfigField("String", "GODOT_PLUGIN_NAME", "\"${pluginName}\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation libs.godot
+
+    //if you have any other dependencies, you add them here (or in project settings)
+}
+

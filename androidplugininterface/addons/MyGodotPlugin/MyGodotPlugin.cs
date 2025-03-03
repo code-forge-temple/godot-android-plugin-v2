@@ -1,3 +1,8 @@
+// Remember that you first need to compile the C# code from Godot Engine (Project Build: Alt+B) and only then 
+// the Godot Engine will allow you to enable the C# plugin.
+
+// Do not forget to add in `addons/MyGodotPlugin/` the `godotplugin-debug.aar` and `godotplugin-release.aar` files
+
 #if TOOLS
 using Godot;
 

@@ -2,9 +2,9 @@
 
 This repository contains two projects that demonstrate how to build and integrate an Android plugin with Godot 4.x:
 
-1. `MyGodotPlugin`: This is the Android project that implements the Android plugin. It includes the necessary configurations and code to create a plugin that can be used within the Godot engine.
+- `MyGodotPlugin`: This is the Android project that implements the Android plugin. It includes the necessary configurations and code to create a plugin that can be used within the Godot engine.
 
-2. `AndroidPluginInterface`: A Godot 4 project that integrates the plugin. It includes examples in both C# and GDScript to show how to interact with the plugin from your game.
+- `AndroidPluginInterface`: A Godot 4 project that integrates the plugin. It includes examples in both C# and GDScript to show how to interact with the plugin from your game.
 
 ## Tutorial Video
 
